@@ -1,0 +1,24 @@
+<div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="card p-4">
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <h5>{{ isEdit ? "Edit Student" : 'Add Student' }}</h5>
+        <div class="mb-3">
+          <input formControlName="title" type="text" class="form-control" placeholder="Title">
+        </div>
+        <div class="mb-3">
+          <input formControlName="description" type="text" class="form-control" placeholder="Description">
+        </div>
+        <div class="mb-3 form-check">
+          <input formControlName="isFinished" class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label" for="flexCheckDefault">
+            Default checkbox
+          </label>
+        </div>
+        <div class="mb-3">
+            <button type="submit" class="btn btn-danger me-2">{{ isEdit ? 'Edit Student' : 'Add Student' }}</button>
+            <button [routerLink]="'/TodoList'" class="btn btn-info ms-2">Cancel</button>
+          </div>
+      </form>
+    </div>
+  </div>
+  

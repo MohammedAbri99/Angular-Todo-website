@@ -1,0 +1,25 @@
+<!-- <div>
+    <h2 class="mt-3">Add Todo</h2>
+    <form class="form w-25">
+        <input type="text" placeholder="Title" class="form-control mb-3">
+        <input type="text" placeholder="Description" class="form-control mb-3">
+        <button class="btn btn-primary " >Add</button>
+    </form>
+</div> -->
+
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <input formControlName="title" type="text" placeholder="title"><br/>
+    <input formControlName="description" type="text" placeholder="Description"><br/>
+    <input formControlName="createdDate" type="date" placeholder="createdDate"><br/>
+    <div class="form-check">
+        <input formControlName="isFinished" class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+            Default checkbox
+        </label>
+    </div>
+    <button [routerLink]="['/TodoList/']" class="btn btn-danger">Add</button>
+    <button [routerLink]="['/TodoList/']" class="btn btn-info" >Cancel</button>
+
+    {{form.value|json}}
+</form>
